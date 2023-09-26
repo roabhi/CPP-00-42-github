@@ -6,15 +6,15 @@
 #    By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 18:54:45 by rabril-h          #+#    #+#              #
-#    Updated: 2023/09/25 19:11:30 by rabril-h         ###   ########.fr        #
+#    Updated: 2023/09/26 22:38:56 by rabril-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Agenda
 
-SRCS = Agenda.cpp 
-
-# PhoneBook.cpp Contact.cpp 
+SRCS = Agenda.cpp \
+		./classes/PhoneBook.cpp \
+		./classes/Contact.cpp 
 
 HEADERS = Agenda.h 
 

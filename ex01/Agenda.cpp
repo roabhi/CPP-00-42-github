@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:58:46 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/25 19:52:20 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:42:54 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 {
     std::string input;
     int         i;
+    Phonebook   phonebook;
 
     input = " ";
     i = -1;
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
 
     if(argc != 1)
         return (0);
-    std::cout << "This is an Agenda. Currently there are no contacts.\n" << std::endl;
+    std::cout << WELCOME_MSG << std::endl;
     std::cout << INFO_MSG << std::endl;
     while (1)
     {
@@ -36,12 +37,12 @@ int main(int argc, char *argv[])
         if (input == "EXIT")
             return (0);
         else if (input == "ADD")
-            std::cout << "add a contact here" << std::endl;
+            phonebook.addContact();
         else if (input == "SEARCH")
              std::cout << "search for a contact here" << std::endl;
         else
         {
-            std::cout << "Please type a valid command\n" << std::endl; 
+            std::cout << ERROR_MSG << std::endl; 
             std::cout << INFO_MSG << std::endl;        
         }
     }   
