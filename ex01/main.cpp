@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Agenda.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:58:46 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/26 22:42:54 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 15:02:06 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int main(int argc, char *argv[])
     std::string input;
     int         i;
     Phonebook   phonebook;
+    // Contact     contact;
 
     input = " ";
     i = -1;
     (void)argv;
+    
 
     if(argc != 1)
         return (0);
