@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 20:51:17 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 18:49:29 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:54:18 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void    Phonebook::searchContact(void)
     int             search_index;
 
     counter = -1;
+    search_index = -1;
     if (contact_list[0].getFirstName().length() < 1)
     {
         std::cout << "There are no contacts. Please add some" << std::endl;
@@ -96,43 +97,41 @@ void    Phonebook::searchContact(void)
         }
     }
 
-    std::cout << "\nEnter an index to see an specific contact.\n" << std::endl;
-	
-    std::cin >> search_index;
-	search_index--;
-
-    if (search_index < 0 || search_index > 7)
-    {
-        std::cout << "Invalid index" << std::endl;
-        return ;
-        
-    }
-    else if (contact_list[search_index].getFirstName().length() < 1)
-    {
-        std::cout << "No entry for that index" << std::endl;
-        return ;
-      }
-    else 
-    {
-        std::cout << "First Name: " << contact_list[search_index].getFirstName() << std::endl;
-        std::cout << "Last Name: " << contact_list[search_index].getLastName() << std::endl;
-        std::cout << "Nickname: " << contact_list[search_index].getNickName() << std::endl;
-        std::cout << "Phone Number: " << contact_list[search_index].getPhoneNumber() << std::endl;
-        std::cout << "Darkest Secret: " << contact_list[search_index].getDarkestSecret() << std::endl;
-        return;
-    }
-    
+    while ((search_index < 0 || search_index > 7) || input.length() != 1)
+	{
+		input.erase();
+		std::cout << "\nEnter an index to see an specific contact: ";
+		if (!std::getline(std::cin, input))
+			return ;
+		if (input.length() == 0)
+			return ;
+		search_index = input[0] - '0' - 1;
+		if (search_index < 0 || search_index > 7)
+			std::cout << "Invalid index." << std::endl;
+        if (contact_list[search_index].getFirstName().length() < 1)
+        {
+            std::cout << "\nNo entry for that index!\n" << std::endl;
+            this->searchContact();
+            return ;
+        }
+	}
+    std::cout << "\nShowing result for index " << search_index + 1 << "\n" << std::endl;
+    std::cout << "First Name: " << contact_list[search_index].getFirstName() << std::endl;
+    std::cout << "Last Name: " << contact_list[search_index].getLastName() << std::endl;
+    std::cout << "Nickname: " << contact_list[search_index].getNickName() << std::endl;
+    std::cout << "Phone Number: " << contact_list[search_index].getPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret: " << contact_list[search_index].getDarkestSecret() << std::endl;    
 }
 
 void    Phonebook::addContact(void)
 {
-    // std::cout << "index is ";
-    // std::cout << index << std::endl;
-
     std::string input;
 	std::string buff;
 
-    //TODO Warn user about overwritting entrys when index + 1 is 9
+    // if (index + 1 )
+
+    // std::cout << "El nombre de la entrada es ";
+    // std::cout << this->contact_list[index].getName() << std::endl;
 
     this->contact_list[index].setFirstName(this->getInputContent("First Name:"));
     this->contact_list[index].setLastName(this->getInputContent("Last Name:"));
@@ -140,8 +139,7 @@ void    Phonebook::addContact(void)
     this->contact_list[index].setPhoneNumber(this->getInputContent("Phone Number:"));
     this->contact_list[index].setDarkestSecret(this->getInputContent("Darkest Secret:"));
 
-    // std::cout << "El nombre de la entrada es ";
-    // std::cout << this->contact_list[index].getName() << std::endl;
+    
 
     // ? If we are out of space reset index to first entry
     
