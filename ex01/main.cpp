@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:58:46 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 15:02:06 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 18:47:58 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int main(int argc, char *argv[])
         return (0);
     std::cout << WELCOME_MSG << std::endl;
     std::cout << INFO_MSG << std::endl;
-    while (1)
-    {
+    while (1)    {
+        
         std::cout << "-> ";
         if (!std::getline(std::cin, input))
 			return (1);
@@ -41,12 +41,13 @@ int main(int argc, char *argv[])
         else if (input == "ADD")
             phonebook.addContact();
         else if (input == "SEARCH")
-             std::cout << "search for a contact here" << std::endl;
-        else
-        {
-            std::cout << ERROR_MSG << std::endl; 
-            std::cout << INFO_MSG << std::endl;        
-        }
+             phonebook.searchContact();
+       
+        // else
+        // {
+        //     std::cout << ERROR_MSG << std::endl; 
+        //     std::cout << INFO_MSG << std::endl;        
+        // }
     }   
     return (0);
 }

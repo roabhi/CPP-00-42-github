@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 22:05:05 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 15:17:32 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:32:45 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,16 @@ void    Contact::setPhoneNumber(std::string str)
 std::string Contact::getPhoneNumber(void)
 {
     return this->phoneNumber;
+}
+
+void    Contact::setDarkestSecret(std::string str)
+{
+    this->darkestSecret = str;
+}
+
+std::string Contact::getDarkestSecret(void)
+{
+    return this->darkestSecret;
 }
 
 // void    Contact::addEntry(Contact *contact)
