@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 20:51:17 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 21:54:18 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:56:06 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,24 +128,15 @@ void    Phonebook::addContact(void)
     std::string input;
 	std::string buff;
 
-    // if (index + 1 )
-
-    // std::cout << "El nombre de la entrada es ";
-    // std::cout << this->contact_list[index].getName() << std::endl;
-
     this->contact_list[index].setFirstName(this->getInputContent("First Name:"));
     this->contact_list[index].setLastName(this->getInputContent("Last Name:"));
     this->contact_list[index].setNickName(this->getInputContent("Nick Name:"));
     this->contact_list[index].setPhoneNumber(this->getInputContent("Phone Number:"));
-    this->contact_list[index].setDarkestSecret(this->getInputContent("Darkest Secret:"));
-
-    
-
-    // ? If we are out of space reset index to first entry
+    this->contact_list[index].setDarkestSecret(this->getInputContent("Darkest Secret:"));    
     
     if (index + 1 > 7)
         index = 0;
     else
-        index++;    
+        index++;
     
 }

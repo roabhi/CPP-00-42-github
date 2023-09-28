@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:58:46 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 21:48:06 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:56:34 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int main(int argc, char *argv[])
     std::string input;
     int         i;
     Phonebook   phonebook;
-    // Contact     contact;
 
     input = " ";
     i = -1;
-    (void)argv;
-    
+    (void)argv;    
 
     if(argc != 1)
         return (0);

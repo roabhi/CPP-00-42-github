@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 22:05:05 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 17:32:45 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:55:27 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,3 @@ std::string Contact::getDarkestSecret(void)
     return this->darkestSecret;
 }
 
-// void    Contact::addEntry(Contact *contact)
-// {
-
-// }

@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 22:04:04 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 15:24:48 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:55:41 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class Contact {
     public:
         Contact(void);
         ~Contact(void);
-        // void    addEntry(Contact *contact);
         void        setFirstName(std::string str);
         std::string getFirstName(void);
         void        setLastName(std::string str);
