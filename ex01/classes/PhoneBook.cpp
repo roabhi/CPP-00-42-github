@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 20:51:17 by rabril-h          #+#    #+#             */
-/*   Updated: 2023/09/28 21:56:06 by rabril-h         ###   ########.fr       */
+/*   Updated: 2023/10/01 16:09:00 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,12 @@ void    Phonebook::searchContact(void)
 			return ;
 		if (input.length() == 0)
 			return ;
+        if (input.length() > 1)
+        {
+            std::cout << "Invalid index.\n" << std::endl;
+            this->searchContact();
+            return;
+        }
 		search_index = input[0] - '0' - 1;
 		if (search_index < 0 || search_index > 7)
 			std::cout << "Invalid index." << std::endl;
